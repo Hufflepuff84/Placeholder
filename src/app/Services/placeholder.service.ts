@@ -9,6 +9,6 @@ export class PlaceholderService {
   constructor(private httpService: HttpClient) { }
 
   async get(): Promise<any>{
-    return await this.httpService.get('https://jsonplaceholder.typicode.com/todos');
+    return await this.httpService.get('https://jsonplaceholder.typicode.com/posts/');
   }
 }

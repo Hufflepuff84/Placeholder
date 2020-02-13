@@ -1,6 +1,9 @@
+  
 import { Component } from '@angular/core';
-import { PlaceholderService } from './Services/placeholder.service';
-import { async } from '@angular/core/testing';
+import { PlaceholderService } from './services/placeholder.service';
+import {MatTableDataSource } from '@angular/material';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,13 +12,15 @@ import { async } from '@angular/core/testing';
 })
 export class AppComponent {
 
-  constructor(private placeHolderService: PlaceholderService){}
+
+  constructor(private placeholderService : PlaceholderService){}
   displayedColumns: string[] = ['userId', 'id', 'title', 'completed'];
-  title = 'application';
   dataSource;
 
-  async ngOnInit(): Promise<void>{
-    this.dataSource =  await this.placeHolderService.get();
+async ngOnInit() {
+this.dataSource= await this.placeholderService.get();
+}
 
-  }
-}//kjbjhvcg
+
+}
+
